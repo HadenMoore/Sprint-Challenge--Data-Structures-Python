@@ -6,40 +6,41 @@ class RingBuffer:
         self.capacity = capacity
         self.current = None
         self.storage = DoublyLinkedList()
-        self.track = 0
+
     def append(self, item):
+        if self.storage.length < self.capacity:
+            self.storage.add_to_tail(item)
+            self.current = self.storage.tail
+        
+        elif self.current == self.storage.tail:
+            self.storage.head.value = item
+            self.current = self.storage.head
+        
+        else:
+            self.current.next.value = item
+            self.current = self.current.next
 
     def get(self):
         # Note:  This is the only [] allowed
         list_buffer_contents = []
 
-        # TODO: Your code here
-        list_buffer_contents = []
+        node = self.storage.head
+        # loop through storage and add values to list
+        while node:
+            list_buffer_contents.append(node.value)
+            node = node.next
 
-        item = self.storage.head
-        if self.storage.length < 1:
-            return list_buffer_contents
-        else: 
-            while item.next: 
-                list_buffer_contents.append(item.value)
-                item = item.next
-            list_buffer_contents.append(item.value)
-            return list_buffer_contents
+        return list_buffer_contents
 
 # ----------------Stretch Goal-------------------
 
 
 class ArrayRingBuffer:
     def __init__(self, capacity):
-        self.capacity = capacity 
-        self.storage = [0]*capacityself.track = 0 
+        pass
 
     def append(self, item):
-        if len(self.storage) < self.capacity: 
-            self.storage.append(item)
-            self.track += 1 
-        else: 
-            self.storage[self.track % self.capacity] = itemself.track += 1
+        pass
 
     def get(self):
-        return [i for i in self.storage if i]
+        pass
