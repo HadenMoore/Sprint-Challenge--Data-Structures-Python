@@ -20,21 +20,21 @@ for name_1 in names_1:
 """
 
 # Initialize tree with first value of names_1
-tree = BinarySearchTree(names_1[0])
+bst = BinarySearchTree(names_1[0])
 
 # for each name in names_1
 for name in names_1[1:]:
     # Insert name into tree
-    tree.insert(name)
+    bst.insert(name)
 
 # Initialize a dupes list
-duplicates = []
+duplicates = list(set(names_1) & set(names_2)
 
 # for each name in names_2
 for name in names_2:
     # check if tree contains name
     # If it does
-    if tree.contains(name):
+    if bst.contains(name):
         # Add it to dupes list
         duplicates.append(name)
 
