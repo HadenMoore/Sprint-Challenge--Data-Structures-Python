@@ -44,7 +44,7 @@ print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
 
     # Starter Code Runtime: 10.759980916976929 seconds
-
+    # Optimized Code Runtime: 6.327238321304321 seconds
 
 
 
