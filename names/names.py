@@ -1,5 +1,5 @@
 import time
-from bsearchtree import BinarySearchTree
+from bst import BinarySearchTree
 
 start_time = time.time()
 
@@ -28,7 +28,7 @@ for name in names_1[1:]:
     bst.insert(name)
 
 # Initialize a dupes list
-duplicates = list(set(names_1) & set(names_2)
+duplicates = []
 
 # for each name in names_2
 for name in names_2:
