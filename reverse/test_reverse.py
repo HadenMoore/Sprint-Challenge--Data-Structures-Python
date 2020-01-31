@@ -45,3 +45,5 @@ class LinkedListTests(unittest.TestCase):
 
 if __name__ == '__main__':
   unittest.main()
+
+  #Ran 5 tests in 0.000s # OK
