@@ -76,3 +76,5 @@ class RingBufferTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+# Ran 1 test in 0.000s #OK
